@@ -1,0 +1,218 @@
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+
+  .nav-logo {
+    width: 15%;
+    display: flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+
+    h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+  }
+
+  .nav-links {
+    display: flex;
+    width: 53%;
+    justify-content: center;
+    align-items: center;
+
+    .links {
+      font-weight: 700;
+      margin-right: 10px;
+      border-bottom: 5px solid rgb(212, 0, 255);
+      padding: 0 15px 3px 15px;
+      text-decoration: none;
+      text-transform: capitalize;
+      color: #fff;
+      font-size: 1.05rem;
+      cursor: pointer;
+    }
+    .menu-link {
+      font-weight: 700;
+      margin-right: 10px;
+      border-bottom: 5px solid rgb(212, 0, 255);
+      padding: 0 15px;
+      color: #fff;
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: all 1s linear;
+
+      &:hover {
+        .sub-menu {
+          display: block;
+        }
+      }
+    }
+  }
+  .sub-menu {
+    position: absolute;
+    display: none;
+    width: 79vw;
+    left: 0;
+    top: 2.75rem;
+    background: linear-gradient(to right, #bb57bb, #9c32b6);
+    z-index: 10;
+
+    .sub-menu-top {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 2rem;
+
+      .sub-menu-content {
+        text-transform: capitalize;
+        h2 {
+          font-size: 2rem;
+          font-weight: 700;
+        }
+
+        .sub-menu-link {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          width: 220px;
+          cursor: pointer;
+
+          h3 {
+            margin-top: 3px;
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+    .sub-menu-footer {
+      display: flex;
+      justify-content: space-between;
+      padding: 15px 2rem;
+      background: linear-gradient(to right, #b366c2, #8441b1);
+
+      h3 {
+        font-weight: 700;
+        font-size: 1rem;
+        margin: 0;
+      }
+      h5 {
+        font-weight: 600;
+        font-size: 1rem;
+        margin: 0;
+      }
+
+      .vl {
+        border-left: 1px solid #fff;
+      }
+    }
+  }
+
+  .login {
+    display: flex;
+    justify-content: space-between;
+    width: 30%;
+
+    .btn-container {
+      display: flex;
+      width: 50%;
+
+      .btn {
+        background: rgb(63, 120, 245);
+        text-align: center;
+        text-decoration: none;
+        width: 50%;
+        height: max-content;
+        padding: 10px 7px;
+        margin-right: 5px;
+        border: none;
+        color: white;
+        text-transform: capitalize;
+        font-size: 1.05rem;
+        font-weight: 600;
+        cursor: pointer;
+      }
+    }
+
+    .login-container {
+      color: #fff;
+      text-decoration: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgb(83, 82, 82);
+      width: 50%;
+      margin-left: 3px;
+
+      i {
+        padding: 5px;
+        font-size: 1.25rem;
+      }
+
+      .login-btn {
+        width: 140px;
+        background: rgb(59, 59, 59);
+        padding: 7px;
+        font-size: 1.05rem;
+        font-weight: 600;
+        border: none;
+        height: max-content;
+        color: white;
+        text-transform: capitalize;
+        cursor: pointer;
+      }
+    }
+
+    .logout-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      width: 50%;
+
+      img {
+        width: 38px;
+        height: 42px;
+        background: #df6a6a;
+      }
+
+      h4 {
+        margin: 0;
+      }
+
+      i {
+        font-size: 2rem;
+      }
+
+      &:hover {
+        .logout-dropdown {
+          display: block;
+        }
+      }
+      .logout-dropdown {
+        background: rgb(59, 59, 59);
+        position: absolute;
+        display: none;
+        z-index: 11;
+        top: 50px;
+
+        button {
+          width: 100%;
+          padding: 7px;
+          background: rgb(59, 59, 59);
+          border: none;
+          color: #fff;
+          cursor: pointer;
+          font-size: 1rem;
+          font-weight: 600;
+
+          &:hover {
+            background: rgb(83, 82, 82);
+          }
+        }
+      }
+    }
+  }
+}

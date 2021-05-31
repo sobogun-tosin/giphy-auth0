@@ -1,0 +1,139 @@
+.userpage {
+  display: flex;
+  margin-top: 3rem;
+
+  .userpage-left {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .user-avatar {
+      width: 72%;
+      height: 250px;
+      background: #df6a6a;
+      margin-bottom: 1.5rem;
+    }
+
+    .content {
+      border: 3px dashed rgb(129, 125, 125);
+      padding: 18px;
+      text-align: center;
+
+      h4 {
+        margin: 5px 0;
+      }
+      h5 {
+        margin: 0;
+      }
+      i {
+        font-size: 1.25rem;
+      }
+    }
+
+    .vl {
+      border-bottom: 3px solid rgb(49, 46, 46);
+      margin: 20px 0 30px 0;
+      width: 72%;
+    }
+    h6 {
+      margin: 5px 0;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+    .our-app {
+      width: 72%;
+      height: 300px;
+    }
+    .learn-more-btn {
+      margin-top: 5px;
+      width: 72%;
+      background: rgb(48, 45, 45);
+      border: none;
+      cursor: pointer;
+      color: white;
+      font-weight: 600;
+      padding: 10px;
+    }
+  }
+  .userpage-main {
+    width: 70%;
+
+    .userpage-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .userpage-data {
+      border: 3px dashed rgb(129, 125, 125);
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 350px;
+
+      i {
+        color: #6ddf63;
+        font-size: 3rem;
+      }
+
+      .userpage-btn-container {
+        button {
+          margin: 10px;
+          border: none;
+          cursor: pointer;
+          padding: 10px 5rem;
+          background: #4050a8;
+          color: white;
+          text-transform: capitalize;
+          font-size: 1rem;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
+
+.modal {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  //   display: flex;
+  background: rgba(8, 32, 71, 0.7);
+  display: none;
+
+  .modal-content {
+    background: rgb(224, 220, 220);
+    position: relative;
+    color: #3d3939;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    margin: 0 auto;
+    text-align: center;
+    width: 40%;
+
+    .close {
+      color: red;
+      font-size: 2rem;
+      position: absolute;
+      top: 10px;
+      cursor: pointer;
+      right: 10px;
+      transition: all 0.5s linear;
+
+      &:hover {
+        transform: rotate(90deg);
+      }
+    }
+  }
+}
+.show-modal {
+  display: block;
+}

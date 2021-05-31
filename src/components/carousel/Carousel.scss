@@ -1,0 +1,48 @@
+.carousel {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+
+  .carousel-content {
+    position: relative;
+    margin: 5px;
+    opacity: 0;
+
+    img {
+      border-radius: 8px;
+    }
+
+    h4 {
+      font-size: 2rem;
+      text-align: center;
+      text-transform: uppercase;
+    }
+  }
+  .active {
+    opacity: 1;
+    //   transform: translateX(0);
+  }
+}
+
+.carousel-btn-container {
+  display: flex;
+
+  .carousel-btn {
+    position: absolute;
+    font-size: 3.5rem;
+    top: 45%;
+    cursor: pointer;
+    transition: all 1s ease;
+    &:hover {
+      background-color: rgb(99, 98, 98);
+    }
+  }
+
+  .left {
+    left: -10px;
+  }
+
+  .right {
+    right: -10px;
+  }
+}

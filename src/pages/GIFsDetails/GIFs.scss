@@ -1,0 +1,136 @@
+.gifs-details {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-column-gap: 5px;
+
+  .gifs-side {
+    .gifs-side-content {
+      display: flex;
+
+      .user-content {
+        margin-left: 10px;
+
+        h4 {
+          margin: 0;
+        }
+
+        i {
+          font-size: 1.25rem;
+          color: rgb(101, 176, 226);
+        }
+      }
+    }
+  }
+
+  .gifs-center {
+    .top-font {
+      margin: 0 0 10px;
+      font-size: 1rem;
+      color: rgb(75, 75, 74);
+    }
+    .gif-center-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      grid-column-gap: 5px;
+
+      .gifs-center-img {
+        position: relative;
+
+        &:hover {
+          .icons {
+            display: block;
+            transform: translateY(2);
+          }
+        }
+      }
+
+      .icons {
+        position: absolute;
+        bottom: 24px;
+        left: 10px;
+        transition: all 3s linear;
+        display: none;
+
+        i {
+          font-size: 1.75rem;
+          padding: 10px;
+          background: rgb(23, 21, 32);
+          margin: 5px;
+          cursor: pointer;
+        }
+      }
+
+      .gif-center-links {
+        h4 {
+          font-size: 1.1rem;
+          margin: 0;
+          margin-bottom: 10px;
+        }
+        i {
+          font-size: 1.5rem;
+          margin-right: 10px;
+        }
+        .share-it {
+          font-size: 1rem;
+          margin: 5px 0 7px;
+          color: rgb(75, 75, 74);
+        }
+        .links {
+          display: flex;
+        }
+      }
+    }
+    .gifs-center-body {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 5px;
+
+      .gifs-center-content {
+        position: relative;
+        transition: all 2s linear;
+
+        &:hover {
+          .gifs-center-data {
+            display: block;
+          }
+        }
+
+        .gifs-img {
+          background: #000;
+          opacity: 70%;
+          width: 292px;
+          height: 200px;
+          border-radius: 8px;
+        }
+
+        i {
+          font-size: 1.25rem;
+        }
+
+        .gifs-center-data {
+          display: none;
+
+          .gifs-center-icons {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            i {
+              margin-left: 10px;
+            }
+          }
+
+          .gifs-center-user {
+            position: absolute;
+            display: flex;
+            bottom: 10px;
+            left: 7px;
+
+            h4 {
+              margin: 0 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
