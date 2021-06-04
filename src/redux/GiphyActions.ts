@@ -12,6 +12,7 @@ import {
 } from "./types";
 
 const url = "https://sandbox-api.getbrass.co/auth";
+const public_key = "lk_Xhu2cIE1pSZiAHCnueRrGNMrZKA5x5T7HXknQawXK8";
 
 export const logout = () => (dispatch: Dispatch<GiphyAction>) => {
   return dispatch({ type: IS_LOGIN, payload: false });
@@ -28,7 +29,7 @@ export const login =
       };
       const res = await axios.post(`${url}/login`, form, {
         headers: {
-          Authorization: `Bearer lk_Xhu2cIE1pSZiAHCnueRrGNMrZKA5x5T7HXknQawXK8`,
+          Authorization: `Bearer ${public_key}`,
           "Content-Type": "application/json",
         },
       });
@@ -73,7 +74,7 @@ export const register =
       };
       const res = await axios.post(`${url}/register`, form, {
         headers: {
-          Authorization: `Bearer lk_Xhu2cIE1pSZiAHCnueRrGNMrZKA5x5T7HXknQawXK8`,
+          Authorization: `Bearer ${public_key}`,
           "Content-Type": "application/json",
         },
       });
@@ -139,10 +140,7 @@ export const searchGIFs =
       }
     } catch (err) {
       console.log(err);
-      dispatch({
-        type: ERROR,
-        payload: "Invalid Search Result",
-      });
+      setError(err.message);
     }
   };
 
@@ -164,10 +162,7 @@ export const searchSticker =
       }
     } catch (err) {
       console.log(err);
-      dispatch({
-        type: ERROR,
-        payload: err.message,
-      });
+      setError(err.message);
     }
   };
 
@@ -189,10 +184,7 @@ export const getStickers = () => async (dispatch: Dispatch<GiphyAction>) => {
     }
   } catch (err) {
     console.log(err);
-    dispatch({
-      type: ERROR,
-      payload: err.message,
-    });
+    setError(err.message);
   }
 };
 

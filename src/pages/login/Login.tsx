@@ -20,7 +20,6 @@ const Login = () => {
   const errMsg = useSelector((state: RootStore) => state.giphy.error);
   const loading = useSelector((state: RootStore) => state.giphy.loading);
   const is_login = useSelector((state: RootStore) => state.giphy.is_login);
-  const reg = useSelector((state: RootStore) => state.giphy.register);
   console.log(is_login);
 
   const radNum = Math.floor(Math.random() * 10);
@@ -196,8 +195,7 @@ const Login = () => {
           <img
             src={imgs[radNum].images.original.url}
             alt=""
-            height="685px"
-            width="750px"
+            className="main-img"
           />
           {imgs[radNum].user ? (
             <div className="login-img-user">

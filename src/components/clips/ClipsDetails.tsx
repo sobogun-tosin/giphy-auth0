@@ -8,14 +8,12 @@ import { RootStore } from "../../redux/Store";
 import { TrendingState } from "../../redux/types";
 import { Link } from "react-router-dom";
 import spinner from "../../images/loading.gif";
+import clipImg from "../../images/artist.gif";
 
 const ClipsDetails = () => {
   const clips = useSelector((state: RootStore) => state.giphy.trending);
   const loading = useSelector((state: RootStore) => state.giphy.loading);
   const dispatch = useDispatch();
-
-  const radNum = Math.floor(Math.random() * 10);
-  const popular = clips?.slice(radNum, radNum + 6);
 
   useEffect(() => {
     dispatch(getTrending());
@@ -31,18 +29,8 @@ const ClipsDetails = () => {
 
   return (
     <div className="container">
-      <div className="popular-clips">
-        {popular?.map((item: TrendingState, index) => {
-          return (
-            <div key={index} className="popular-clips-content">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque
-              consectetur magnam obcaecati quo voluptatum assumenda quae sunt
-              nobis quasi optio temporibus est veritatis, consequuntur maxime
-              laboriosam hic magni neque, alias velit ex ratione officia fuga,
-              odit recusandae. Quae, veritatis?
-            </div>
-          );
-        })}
+      <div className="clips-details-banner">
+        <img src={clipImg} alt="clip img" />
       </div>
 
       <h3>All Clips</h3>

@@ -12,6 +12,7 @@ import { RiFullscreenFill } from "react-icons/ri";
 import { BsGrid3X3GapFill, BsEyeFill } from "react-icons/bs";
 import { ImEmbed, ImShare } from "react-icons/im";
 import spinner from "../../images/loading.gif";
+import { Link } from "react-router-dom";
 
 const GIFsDetails = () => {
   const { id } = useParams<any>();
@@ -62,6 +63,15 @@ const GIFsDetails = () => {
             ) : (
               ""
             )}
+            <div className="gifs-side-learn-more">
+              <h4>Make Your Own Virtual Background</h4>
+              <img
+                className="more"
+                src="https://giphy.com/static/img/zoomies-small.gif"
+                alt="img"
+              />
+              <button className="more-btn">Learn More</button>
+            </div>
           </div>
           <div className="gifs-center">
             <h4 className="top-font">{id}</h4>
@@ -107,11 +117,13 @@ const GIFsDetails = () => {
                   </i>{" "}
                   Embed
                 </h4>
-                <h5 className="share-it">Share It!</h5>
-                <div className="links">links</div>
-                <h5 className="share-it">
-                  <BsEyeFill fontSize="18px" /> 22,454,678 Views
-                </h5>
+                <div>
+                  <h5 className="share-it">Share It!</h5>
+                  <div className="links">links</div>
+                  <h5 className="share-it">
+                    <BsEyeFill fontSize="18px" /> 22,454,678 Views
+                  </h5>
+                </div>
               </div>
             </div>
             <h3>Related GIFs</h3>
@@ -119,8 +131,12 @@ const GIFsDetails = () => {
               {gifs.slice(1).map((item: TrendingState, index) => {
                 const { url } = item.images.fixed_width;
                 return (
-                  <div key={index} className="gifs-center-content">
-                    <img src={url} alt="" className="gifs-img" />
+                  <Link
+                    to={`/gifs/${item.title}`}
+                    key={index}
+                    className="gifs-center-content"
+                  >
+                    <img src={url} alt="img" className="gifs-img" />
                     <div className="gifs-center-data">
                       <div className="gifs-center-icons">
                         <i>
@@ -149,7 +165,7 @@ const GIFsDetails = () => {
                         </div>
                       )}
                     </div>
-                  </div>
+                  </Link>
                 );
               })}
             </div>

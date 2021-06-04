@@ -215,4 +215,246 @@ nav {
       }
     }
   }
+
+  .nav-2 {
+    display: none;
+
+    .nav-2-btn {
+      font-size: 1.5rem;
+    }
+
+    .nav-links-2 {
+      display: none;
+      position: absolute;
+      background: rgb(17, 6, 41);
+      width: 100%;
+      top: 50px;
+      left: 0;
+    }
+
+    .active {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .links-2 {
+      color: white;
+      text-decoration: none;
+      font-size: 1.25rem;
+      padding: 10px 0;
+      font-weight: 600;
+      text-transform: uppercase;
+      cursor: pointer;
+      text-align: center;
+      width: 100%;
+      border-bottom: 5px solid rgb(212, 0, 255);
+
+      &:hover {
+        background: rgb(83, 82, 82);
+      }
+    }
+
+    .menu-link-2 {
+      font-weight: 700;
+      border-bottom: 5px solid rgb(212, 0, 255);
+      padding: 8px 0;
+      color: #fff;
+      font-size: 1.5rem;
+      cursor: pointer;
+      text-align: center;
+      transition: all 1s linear;
+      width: 100%;
+
+      // &:hover {
+      //   .sub-menu-2 {
+      //     display: block;
+      //   }
+      // }
+    }
+    .sub-menu-2 {
+      position: absolute;
+      display: none;
+      width: 100%;
+      left: 0;
+      top: 2rem;
+      background: linear-gradient(to right, #bb57bb, #9c32b6);
+
+      .sub-menu-top {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        padding: 10px 1rem;
+
+        .close-btn {
+          font-size: 1.5rem;
+          position: absolute;
+          cursor: pointer;
+          top: 10px;
+          right: 10px;
+          color: rgb(236, 141, 141);
+          transition: all 0.5s linear;
+
+          &:hover {
+            transform: rotate(90deg);
+          }
+        }
+
+        .sub-menu-content {
+          text-transform: capitalize;
+          h2 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin: 3px;
+          }
+
+          hr {
+            margin: 0;
+          }
+
+          .sub-menu-link {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            width: 100%;
+            cursor: pointer;
+
+            h3 {
+              margin: 5px 3px;
+              font-size: 1rem;
+              font-weight: 500;
+            }
+          }
+        }
+      }
+      .sub-menu-footer {
+        display: flex;
+        flex-direction: column;
+        padding: 10px 1rem;
+        background: linear-gradient(to right, #b366c2, #8441b1);
+
+        h3 {
+          font-weight: 700;
+          font-size: 1rem;
+          margin: 0;
+        }
+        h5 {
+          font-weight: 600;
+          font-size: 1rem;
+          margin: 0;
+        }
+
+        .sub-menu-footer-link {
+          display: flex;
+        }
+      }
+    }
+    .show-menu-2 {
+      display: block;
+    }
+
+    .login-2 {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 5px;
+
+      .btn-container {
+        display: flex;
+
+        .btn {
+          text-align: center;
+          text-decoration: none;
+          width: 50%;
+          height: max-content;
+          padding: 10px 7px;
+          margin-right: 5px;
+          border: none;
+          color: white;
+          text-transform: capitalize;
+          font-size: 1.05rem;
+          font-weight: 600;
+          cursor: pointer;
+        }
+      }
+
+      .login-container {
+        color: #fff;
+        text-decoration: none;
+        align-items: center;
+        width: 50%;
+        margin-left: 3px;
+
+        .login-btn {
+          width: 140px;
+          background: rgb(59, 59, 59);
+          padding: 7px;
+          font-size: 1.05rem;
+          font-weight: 600;
+          border: none;
+          height: max-content;
+          color: white;
+          text-transform: capitalize;
+          cursor: pointer;
+        }
+      }
+
+      .logout-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        width: 50%;
+
+        h4 {
+          margin: 0;
+        }
+
+        i {
+          font-size: 2rem;
+        }
+
+        &:hover {
+          .logout-dropdown {
+            display: block;
+          }
+        }
+        .logout-dropdown {
+          background: rgb(59, 59, 59);
+          position: absolute;
+          display: none;
+          z-index: 11;
+          top: 50px;
+
+          button {
+            width: 100%;
+            padding: 7px;
+            background: rgb(59, 59, 59);
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+
+            &:hover {
+              background: rgb(83, 82, 82);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    .nav-links {
+      display: none;
+    }
+    .login {
+      display: none;
+    }
+    .nav-2 {
+      display: block;
+    }
+  }
 }

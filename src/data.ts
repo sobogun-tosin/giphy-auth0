@@ -1,27 +1,27 @@
 export const navLinks = [
   {
     id: 1,
-    url: "https://giphy.com/reactions",
+    url: "reactions",
     title: "reactions",
   },
   {
     id: 2,
-    url: "https://giphy.com/entertainments",
+    url: "entertainments",
     title: "entertainments",
   },
   {
     id: 3,
-    url: "https://giphy.com/sports",
+    url: "sports",
     title: "sports",
   },
   {
     id: 4,
-    url: "/stickers",
+    url: "stickers",
     title: "stickers",
   },
   {
     id: 5,
-    url: "/artists",
+    url: "artists",
     title: "artists",
   },
 ];

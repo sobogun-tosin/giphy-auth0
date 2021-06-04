@@ -110,6 +110,11 @@
 .login-img {
   position: relative;
 
+  .main-img {
+    height: 605px;
+    width: 750px;
+  }
+
   .login-img-user {
     position: absolute;
     display: flex;
@@ -126,5 +131,31 @@
         color: rgb(141, 226, 252);
       }
     }
+  }
+}
+@media screen and (max-width: 1100px) {
+  .login-img {
+    .main-img {
+      width: 500px;
+      height: 500px;
+    }
+  }
+}
+@media screen and (max-width: 950px) {
+  .login-img {
+    .main-img {
+      width: 420px;
+      height: 500px;
+    }
+  }
+}
+@media screen and (max-width: 800px) {
+  .login {
+    display: grid;
+    grid-template-columns: none;
+    place-items: center;
+  }
+  .login-img {
+    display: none;
   }
 }
