@@ -81,6 +81,7 @@
       }
 
       .userpage-btn-container {
+        display: flex;
         button {
           margin: 10px;
           border: none;
@@ -103,8 +104,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  //   display: flex;
-  background: rgba(8, 32, 71, 0.7);
+  background: rgba(10, 35, 75, 0.7);
   display: none;
 
   .modal-content {
@@ -115,7 +115,7 @@
     justify-content: center;
     align-items: center;
     height: 300px;
-    margin: 0 auto;
+    margin: 3rem auto;
     text-align: center;
     width: 40%;
 
@@ -136,4 +136,46 @@
 }
 .show-modal {
   display: block;
+}
+
+@media screen and (max-width: 800px) {
+  .userpage {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .userpage-left {
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+
+      .user-avatar {
+        width: 30%;
+        height: 150px;
+      }
+      .content {
+        width: 25%;
+      }
+      .vl {
+        display: none;
+      }
+      h6 {
+        display: none;
+      }
+      .our-app {
+        display: none;
+      }
+      .learn-more-btn {
+        display: none;
+      }
+    }
+    .userpage-main {
+      width: 100%;
+    }
+  }
+}
+@media screen and (max-width: 530px) {
+  .userpage-btn-container {
+    flex-direction: column;
+  }
 }

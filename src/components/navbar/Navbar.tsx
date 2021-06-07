@@ -32,10 +32,12 @@ const Navbar = () => {
 
   return (
     <nav className="container">
-      <Link to="/" className="nav-logo">
-        <img src={logo} alt="logo" width="70px" height="70px" />
-        <h1>GIPHY</h1>
-      </Link>
+      <div className="nav-logo-container">
+        <Link to="/" className="nav-logo">
+          <img src={logo} alt="logo" className="logo-img" />
+          <h1>GIPHY</h1>
+        </Link>
+      </div>
       <div className="nav-links">
         {navLinks.map((link: NavLink) => {
           const { id, url, title } = link;
@@ -88,7 +90,7 @@ const Navbar = () => {
         {is_login ? (
           <div className="logout-container">
             <img src={avatar} alt="user-img" />
-            <h4>NAme</h4>
+            <h4>Name</h4>
             <i>
               <MdArrowDropDown />
             </i>

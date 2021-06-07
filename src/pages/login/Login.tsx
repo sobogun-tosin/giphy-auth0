@@ -6,7 +6,7 @@ import { RootStore } from "../../redux/Store";
 import { getTrending, login, register } from "../../redux/GiphyActions";
 import { GoVerified } from "react-icons/go";
 import { GrFacebook, GrApple } from "react-icons/gr";
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import spinner from "../../images/loading.gif";
 
 const Login = () => {
@@ -15,12 +15,12 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const history = useHistory();
   const dispatch = useDispatch();
   const imgs = useSelector((state: RootStore) => state.giphy.trending);
   const errMsg = useSelector((state: RootStore) => state.giphy.error);
   const loading = useSelector((state: RootStore) => state.giphy.loading);
   const is_login = useSelector((state: RootStore) => state.giphy.is_login);
-  console.log(is_login);
 
   const radNum = Math.floor(Math.random() * 10);
   const handleTab = (index: number) => {
@@ -45,7 +45,10 @@ const Login = () => {
 
   useEffect(() => {
     dispatch(getTrending());
-  }, [dispatch]);
+    if (is_login) {
+      history.push("/user");
+    }
+  }, [dispatch, is_login]);
 
   if (loading) {
     return (
@@ -99,8 +102,6 @@ const Login = () => {
               }
             />
             <button className="login-btn">Log in</button>
-            {/* <Link to="/user">
-            </Link> */}
             {errMsg && <p className="error">{errMsg}</p>}
             <h5 style={{ color: "#2ccfcf" }}>Forgot Your Password?</h5>
             <button className="login-btn2">
@@ -160,11 +161,9 @@ const Login = () => {
                 }
               />
               <h2>reCAPTCHA</h2>
-              <Link to="/user">
-                <button className="login-btn" type="submit">
-                  Sign Up
-                </button>
-              </Link>
+              <button className="login-btn" type="submit">
+                Sign Up
+              </button>
               {errMsg && (
                 <div className="error">
                   <p>{errMsg}</p>
