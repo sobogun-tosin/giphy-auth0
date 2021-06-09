@@ -59,7 +59,7 @@ const SearchDetails = () => {
   useEffect(() => {
     dispatch(searchGIFs(id));
     dispatch(searchSticker(id));
-  }, [id]);
+  }, [id, dispatch]);
 
   const toggle = (index: number) => {
     setTab(index);

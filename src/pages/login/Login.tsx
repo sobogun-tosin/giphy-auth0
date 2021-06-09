@@ -48,7 +48,7 @@ const Login = () => {
     if (is_login) {
       history.push("/user");
     }
-  }, [dispatch, is_login]);
+  }, [dispatch, is_login, history]);
 
   if (loading) {
     return (
