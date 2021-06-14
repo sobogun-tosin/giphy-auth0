@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import ArtistDetails from "./components/artist/ArtistDetails";
 import ClipsDetails from "./components/clips/ClipsDetails";
 import Navbar from "./components/navbar/Navbar";
 import Search from "./components/search/Search";
@@ -23,6 +24,7 @@ function App() {
           <Route path="/login" exact component={Login} />
           <ProtectedRoute path="/user" exact component={UserPage} />
           <Route path="/trending" component={TrendingDetails} exact />
+          <Route path="/artist" component={ArtistDetails} />
           <Route path="/search/:id" component={SearchDetails} />
           <Route path="/clip" component={ClipsDetails} exact />
           <Route path="/gifs/:id" component={GIFsDetails} />

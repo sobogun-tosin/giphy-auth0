@@ -32,3 +32,22 @@
     }
   }
 }
+
+.artist-banner {
+  width: 100%;
+  img {
+    width: 100%;
+  }
+}
+
+.artist-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  grid-gap: 5px;
+
+  .artist-details-img {
+    background: url(../../images/bg.png);
+    position: relative;
+    cursor: pointer;
+  }
+}
